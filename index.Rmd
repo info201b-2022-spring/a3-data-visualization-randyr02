@@ -1,0 +1,50 @@
+---
+title: "index"
+output: html_document
+date: '2022-05-16'
+---
+
+```{r setup, include=FALSE}
+source("analysis.R")
+```
+
+
+### **Introduction Paragraph**
+
+The variables that I chose to analyze were the urban location where the ratio of minorities to the white population in jail was the highest, the year where the greatest and lowest change in percentage of the black population who were in jail, the average change in jail population per year, the region with the most minority to jail population, and the non-rural county with the highest percentage of white in jail.
+
+The first variable I chose was the urban location in the most recent year where the ratio of minorities to the white population in jail was the highest. I chose to analyze this variable because I thought that it would show where minorities might be discriminated the most. The second variable I chose was the greatest and lowest change in the percentage of black population who were in jail. I thought it would be interesting to see when there was an influx of the black population being incarcerated and if there was a decrease. The third variable was the average change in total jail population per year. I chose the analyze this because I wanted to know how much the yearly jail population was changing. The fourth variable was the region in the most recent year with the highest minority to jail population ratio. I chose to analyze this because it would help pinpoint where there might be the most discrimination in the incarcerations. The fifth variable was the non-rural county in the most recent year where there was the highest percentage of the white population in jail. I chose the analyze this because I thought that it would be interesting to find where the percentage of jail population is minorities was the highest and where the percentage of jail population is white was the highest. 
+
+
+## **Summary Information**
+
+The first variable I found that the location where the ratio was the highest was `r urban_max_ratio`. The second variable showed that in `r max_black_ratio` there was the greatest change from the previous year in the percent of black population showing that there was an increase and the lowest year was `r min_black_ratio` where there was a decrease the the percent of black population in jail. The third variable where average of the yearly jail population rate was `r avg_yearly_jail_pop_rate`. I found that the region with the highest ratio was `r regions_2018` in the fourth variable. The fifth variable was `r county_2018` which was the non-rural county with the highest white jail population percentage.
+
+
+## **Charts**
+
+### Trend over Time Charts
+```{r trend, echo = FALSE, warning = FALSE}
+get_bar(incarcerations, "Northeast")
+get_bar(incarcerations, "Midwest")
+```
+
+I chose to include both of these charts because I wanted to see how the two regions varied. In the Midwest, it is more likely that people are conservative and in the Northeast, people are most likely more liberal and I wanted to see how that would affect the black jail population over time and how the population rate would change. A pattern that I noticed was that in the early 2000s in the Midwest, there was a higher average population rate and in the Northeast, there was a higher average population rate in the mid 2000s. Both of the peaks of black jail population in both regions occurred in the second half of the decade. By 2010 in both regions, the average population rate has decreased dramatically.
+
+### Scatter Plot
+```{r scatter, echo = FALSE, warning = FALSE}
+get_scatter(incarcerations)
+```
+
+I chose to create this graph because I wanted to see how the minorities to white jail population correlated to total jail population. The scatter plot shows that there are lots of outliers mainly from counties in the Southern region. A lot of the counties are grouped towards the origin and they slowly spread out vertically showing that there is a relatively low minority to white ratio compared to the total jail population.
+
+### State Map
+```{r map, echo = FALSE, warning = FALSE}
+get_map(jail_2018)
+```
+
+I chose to make this map because I wanted to see how the percentage of the state population was in jail. From the map, Louisiana looks to have the highest percentage of their state population in jail and around the Southern region of the United States, the color is darker showing that there is a higher percentage around there.
+
+
+
+
